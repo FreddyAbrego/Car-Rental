@@ -1,0 +1,207 @@
+﻿<Window x:Name="wndNewReservation" x:Class="CarRental.New_Reservation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="New Reservation" Height="650" Width="900" MinWidth="900" MinHeight="650">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".1*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width=".1*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width=".1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".3*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height=".30*" />
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock Grid.ColumnSpan="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">New Reservation</TextBlock>
+
+        <!-- Reservation Information -->
+        <Grid Grid.Column="3" Grid.Row="1" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".1*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".05*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width=".1*"/>
+            </Grid.ColumnDefinitions>
+            <GroupBox Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="7" Content="Reservation Information" Margin="1,0,0,0">
+
+            </GroupBox>
+            <!-- first row -->
+            <Grid Grid.Row="1" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Reservation ID</TextBlock>
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="2">
+                <TextBlock x:Name="lblReservationNumber" Grid.Column="1" VerticalAlignment="Center" Height="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" TextWrapping="WrapWithOverflow" Margin="2,0" TextAlignment="Center"/>
+            </Grid>
+            <!-- second row -->
+            <Grid Grid.Row="2" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Vehicle</TextBlock>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="2">
+                <TextBlock x:Name="lblVehicleID" Grid.Column="1" VerticalAlignment="Center" Height="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" TextWrapping="WrapWithOverflow" Margin="2,0" TextAlignment="Center"/>
+            </Grid>
+            <!-- third row -->
+            <Grid Grid.Row="3" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Customer ID</TextBlock>
+            </Grid>
+            <Grid Grid.Row="3" Grid.Column="2">
+                <TextBlock x:Name="lblCustomerID" Grid.Column="1" VerticalAlignment="Center" Height="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" TextWrapping="WrapWithOverflow" Margin="2,0" TextAlignment="Center"/>
+            </Grid>
+            <!-- third row-->
+            <Grid Grid.Row="4" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Start Date</TextBlock>
+            </Grid>
+            <Grid Grid.Row="4" Grid.Column="2">
+                <DatePicker x:Name="dtpStartDate" VerticalAlignment="Center"/>
+                <!--
+                <TextBlock x:Name="lblStartDate" Grid.Column="1" VerticalAlignment="Center" Height="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" TextWrapping="WrapWithOverflow" Margin="2,0" TextAlignment="Center"/>
+                -->
+            </Grid>
+            <!-- fourth row -->
+            <Grid Grid.Row="5" Grid.Column="1">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">End Date</TextBlock>
+            </Grid>
+            <Grid Grid.Row="5" Grid.Column="2">
+                <DatePicker x:Name="dtpEndDate" VerticalAlignment="Center"/>
+                <!--
+                <TextBlock x:Name="lblEndDate" Grid.Column="1" VerticalAlignment="Center" Height="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" TextWrapping="WrapWithOverflow" Margin="2,0" TextAlignment="Center"/>
+                -->
+            </Grid>
+
+        </Grid>
+
+        <!-- Buttons -->
+        <Grid Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width=".1*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnNewCustomer" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnNewCustomer_Click" Padding="10,1" Height="20" Margin="30,20" Width="100">New Customer</Button>
+            <Button x:Name="btnSearchCustomer" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnSearchCustomer_Click" Padding="10,1" Height="20" Margin="22,20" Width="116">Existing Customer</Button>
+            <Button x:Name="btnCreateReservation" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10,1" Height="20" Margin="44,20,31,20" Width="122" Click="btnCreateReservation_Click">Create Reservation</Button>
+            <Button x:Name="btnExit" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="10,1" Click="btnExit_Click" Grid.Column="4" Height="20" Margin="77,20,66,20" Width="40">Exit</Button>
+
+        </Grid>
+
+        <!-- Customer Information -->
+        <Grid Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width=".05*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width=".05*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".1*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height=".1*" />
+            </Grid.RowDefinitions>
+
+            <GroupBox Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="7" Content="Customer Information">
+
+            </GroupBox>
+            <Grid Grid.Column="1" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" >First Name:</TextBlock>
+                <TextBlock x:Name="lblFirstName" Grid.Column="1" VerticalAlignment="Center" Height="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" Margin="2,0" TextAlignment="Center" TextTrimming="WordEllipsis"/>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">Last Name:</TextBlock>
+                <TextBlock x:Name="lblLastName" Grid.Column="1" VerticalAlignment="Center" Height="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" Margin="2,0" TextAlignment="Center" TextTrimming="WordEllipsis"/>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">Birth Date:</TextBlock>
+                <TextBlock x:Name="lblBirthDate" Grid.Column="1" VerticalAlignment="Center" Height="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" Margin="2,0" TextAlignment="Center" TextTrimming="WordEllipsis"/>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="WrapWithOverflow">Phone Number:</TextBlock>
+                <TextBlock x:Name="lblPhoneNumber" Grid.Column="1" VerticalAlignment="Center" Height="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" Margin="2,0" TextAlignment="Center" TextTrimming="WordEllipsis"/>
+            </Grid>
+            <Grid Grid.Column="1" Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="WrapWithOverflow">License Number:</TextBlock>
+                <TextBlock x:Name="lblLicenseNumber" Grid.Column="1" VerticalAlignment="Center" Height="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" Margin="2,0" TextAlignment="Center" TextTrimming="WordEllipsis"/>
+            </Grid>
+
+            <Grid Grid.Column="2" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">Address 1:</TextBlock>
+                <TextBlock x:Name="lblAddress1" Grid.Column="1" Height="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" Margin="2,0" TextAlignment="Center" VerticalAlignment="Center" TextTrimming="WordEllipsis"/>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">Address 2:</TextBlock>
+                <TextBlock x:Name="lblAddress2" Grid.Column="1" VerticalAlignment="Center" Height="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" Margin="2,0" TextAlignment="Center" TextTrimming="WordEllipsis"/>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">City:</TextBlock>
+                <TextBlock x:Name="lblCity" Grid.Column="1" VerticalAlignment="Center" Height="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" Margin="2,0" TextAlignment="Center" TextTrimming="WordEllipsis"/>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">State:</TextBlock>
+                <TextBlock x:Name="lblState" Grid.Column="1" VerticalAlignment="Center" Height="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" Margin="2,0" TextAlignment="Center" TextTrimming="WordEllipsis"/>
+            </Grid>
+            <Grid Grid.Column="2" Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">Zipcode:</TextBlock>
+                <TextBlock x:Name="lblZipcode" Grid.Column="1" VerticalAlignment="Center" Height="18" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" Margin="2,0" TextAlignment="Center" TextTrimming="WordEllipsis"/>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Window>
